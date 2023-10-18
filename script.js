@@ -222,3 +222,42 @@ const chArr2 = [5, 6, 7, 8, 9, 10];
 
 x = chArr1.concat(chArr2.slice(1));
 console.log(x);
+
+//Object Literal
+
+const obj = {
+  name: "Mahmud",
+  age: 27,
+  isAdmin: true,
+  address: {
+    road: "1/D",
+    house: 31,
+    flat: "5B",
+  },
+  hobbies: ["Drawing", "Poetry", "Reading"],
+  // greet: function () {
+  //   console.log(`Hello, my name is ${this.name}`);
+  // },
+};
+
+x = obj.name;
+x = obj["isAdmin"];
+x = obj["address"]["house"];
+
+delete obj.hobbies;
+obj.hasChildren = true;
+obj.greet = function () {
+  console.log(`Hello, my name is ${this.name}`);
+};
+obj.greet();
+
+x = obj;
+
+console.log(x);
+
+const anotherObj = {
+  "first name": "Mahmudul",
+  "last name": "Hasan",
+};
+
+console.log(anotherObj["first name"]);
