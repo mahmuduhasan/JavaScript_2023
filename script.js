@@ -261,3 +261,75 @@ const anotherObj = {
 };
 
 console.log(anotherObj["first name"]);
+
+const todo = new Object();
+todo.id = 1;
+todo.name = "Coding";
+todo.isCompleted = false;
+x = todo;
+console.log(x);
+
+const obj1 = { a: 1, b: 2 };
+const obj2 = { c: 3, d: 3 };
+
+const obj3 = { obj1, obj2 };
+const obj4 = { ...obj1, ...obj2 };
+console.log(obj4);
+
+const obj5 = Object.assign({}, obj1, obj2);
+
+console.log(obj5);
+
+const todos = [
+  { id: 1, name: "buy milk" },
+  { id: 2, name: "Code" },
+  { id: 3, name: "Workout" },
+];
+
+x = Object.keys(todo).length;
+x = Object.values(todo);
+x = Object.entries(todo);
+console.log(x);
+
+const firstName = "Mahmudul";
+const lastName = "Hasan";
+const boyosh = 30;
+
+const obj6 = {
+  firstName,
+  lastName,
+  boyosh,
+};
+
+console.log(obj6["boyosh"]);
+
+const obj7 = {
+  todoID: 1,
+  title: "Take out trash",
+  user: {
+    nam: "Mahmud",
+  },
+};
+
+//Destructuring Obj
+
+const {
+  todoID,
+  title,
+  user: { nam },
+} = obj7;
+
+console.log(nam);
+
+//Rest Operator
+//Destructurting Array
+
+const num = [1, 2, 3, 4, 5];
+const [first, second, ...rest] = num;
+console.log(first, second, rest);
+
+//JSON
+
+x = JSON.stringify(obj7);
+x = JSON.parse(x);
+console.log(x);
