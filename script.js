@@ -333,3 +333,65 @@ console.log(first, second, rest);
 x = JSON.stringify(obj7);
 x = JSON.parse(x);
 console.log(x);
+
+//Object Challenge
+
+const library = [
+  {
+    title: "Ikigai",
+    author: "Radbin Ayub",
+    status: {
+      own: true,
+      reading: false,
+      read: false,
+    },
+  },
+  {
+    title: "Rich Kid, Poor Kid",
+    author: "Ikramul Haque Hridoy",
+    status: {
+      own: true,
+      reading: false,
+      read: false,
+    },
+  },
+  {
+    title: "Kaizen",
+    author: "Mahmudul Hasan",
+    status: {
+      own: true,
+      reading: false,
+      read: false,
+    },
+  },
+];
+
+library[0]["status"]["read"] = true;
+library[1].status.read = true;
+library[2].status["read"] = true;
+
+console.log(library);
+const { title: firstBook } = library[0];
+console.log(firstBook);
+
+//Functions
+
+function sayHello() {
+  console.log("Hello World!");
+}
+
+sayHello();
+
+function add(num1, num2) {
+  console.log(num1 + num2);
+}
+
+add(2, 3);
+
+function subtract(num1, num2) {
+  return num1 - num2;
+}
+
+const result = subtract(10, 2);
+
+console.log(result);
