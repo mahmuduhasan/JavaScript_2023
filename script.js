@@ -395,3 +395,49 @@ function subtract(num1, num2) {
 const result = subtract(10, 2);
 
 console.log(result);
+
+function registerUser(user) {
+  if (!user) {
+    user = "Bot";
+  }
+
+  return `${user} is registered!`;
+}
+
+console.log(registerUser());
+
+//Rest Params
+
+function sum(...numbers) {
+  let total = 0;
+  for (const num of numbers) {
+    total += num;
+  }
+  return total;
+}
+
+console.log(sum(1, 2, 3, 4, 5));
+
+//Object as Params
+
+function loginUser(user) {
+  return `The user ${user.name} with the id of ${user.id} logged in.`;
+}
+
+const hudaUser = {
+  id: 1,
+  name: "Mahmud",
+};
+
+console.log(loginUser(hudaUser));
+
+//Array as Params
+
+function randomNumPrint(numArr) {
+  const randomIDX = Math.floor(Math.random() * numArr.length);
+  return numArr[randomIDX];
+}
+
+const numArr = [11, 24, 13, 45, 65, 77, 18, 29, 10];
+
+console.warn(randomNumPrint(numArr));
