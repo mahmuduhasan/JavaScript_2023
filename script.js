@@ -441,3 +441,78 @@ function randomNumPrint(numArr) {
 const numArr = [11, 24, 13, 45, 65, 77, 18, 29, 10];
 
 console.warn(randomNumPrint(numArr));
+
+// Function Declaration VS Expression
+// We can call Declaration functions before initializing that but we can not call Expression function before initializing that.
+
+//Declaration
+
+//console.log(addDollarSign(45)); -> It will work
+function addDollarSign(value) {
+  return "$" + value;
+}
+
+console.log(addDollarSign(45));
+
+//Expression
+
+//console.log(addPlusSign(45)); -> Will give error
+const addPlusSign = function (value) {
+  return "+" + value;
+};
+
+console.log(addPlusSign(45));
+
+//Arrow Funtion
+
+const summation = (a, b) => {
+  return a + b;
+};
+
+const subtraction = (a, b) => a - b; // Implicit return
+
+const double = (a) => a * a;
+
+console.log(summation(3, 4));
+console.log(subtraction(10, 4));
+console.log(double(3));
+
+//Returning an Object
+
+const createObj = () => ({
+  name: "Brad",
+});
+
+console.log(createObj());
+
+//IIFE -> Immediately Invoked FUnction Expression
+
+// const userName = "John"; -> Will give error because it has been already declared in otherScript.js file. So here IIFE comes in handy.
+
+(function () {
+  const user = "John";
+  console.log(user);
+})();
+
+(function (name) {
+  console.log("Hello " + name);
+})("Mahmud");
+
+//Function Challenge
+
+const getCelcius = (feranhite) => ((feranhite - 32) * 5) / 9;
+
+console.log(`The temperature is ${getCelcius(50).toFixed(0)}\xB0C`);
+
+const minMax = (...arr) => ({
+  min: Math.min(...arr),
+  max: Math.max(...arr),
+});
+
+console.log(minMax(1, 2, 3, 4, 5, 6, 7, 8));
+
+(function (l, w) {
+  console.log(
+    `The area of a rectangle with a length ${l} and a width of ${w} is ${l * w}`
+  );
+})(5, 10);
