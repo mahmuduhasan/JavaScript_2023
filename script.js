@@ -652,10 +652,22 @@ for (let i = 1; i <= 100; i++) {
   }
 }
 
-// For-of Loop
+// For-of Loop -> Loop over Arrays
 
 const forof = ["Book", "Table", "Chair", "Kite"];
 
 for (const item of forof) {
   console.log(item);
+}
+
+// For-in loop -> Loop over Objects
+
+const forin = {
+  name: "Mahmudul",
+  age: 24,
+  favColor: "Black",
+};
+
+for (const data in forin) {
+  console.log(forin[data]);
 }
