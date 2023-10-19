@@ -600,3 +600,7 @@ if (Object.keys(caveatUser).length > 0) {
 
 // Loose Equality
 console.log(false == 0);
+
+//Logical Operator
+
+console.log(10 > 20 && 30 > 15);
