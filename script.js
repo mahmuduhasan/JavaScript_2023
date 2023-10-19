@@ -516,3 +516,87 @@ console.log(minMax(1, 2, 3, 4, 5, 6, 7, 8));
     `The area of a rectangle with a length ${l} and a width of ${w} is ${l * w}`
   );
 })(5, 10);
+
+//If-Else -> Calculator Challenge
+
+const calculator = (a, b, c) => {
+  switch (c) {
+    case "+":
+      return a + b;
+    case "-":
+      return a - b;
+    case "*":
+      return a * b;
+    case "/":
+      return a / b;
+    default:
+      return "Operator is not applicable!";
+  }
+};
+
+console.log(calculator(5, 2, "+"));
+console.log(calculator(5, 2, "-"));
+console.log(calculator(5, 2, "*"));
+console.log(calculator(5, 2, "/"));
+console.log(calculator(5, 2, "&"));
+
+//Truthy-Falsy Value
+
+/* 
+  Falsy Values
+  - false
+  - 0
+  - "" or ''
+  - null
+  - undefined
+  - NaN
+*/
+
+/*
+  Truthy Values
+  - true
+  - '0'
+  - ' '
+  - []
+  - {}
+  - function () {} (empty function)
+*/
+
+x = NaN;
+x = function () {};
+if (x) {
+  console.log("This is truthy!");
+} else {
+  console.log("This is falsy!");
+}
+
+//Truthy and Falsy caveats
+
+const children = 0;
+
+if (!isNaN(children)) {
+  console.log(`You have ${children} children.`);
+} else {
+  console.log("Please enter number of children.");
+}
+
+// Checking for Empty arrays
+
+const posts = [];
+
+if (posts.length > 0) {
+  console.log("List Posts");
+} else {
+  console.log("No posts to list!");
+}
+
+const caveatUser = {};
+
+if (Object.keys(caveatUser).length > 0) {
+  console.log("List User!");
+} else {
+  console.log("No User!");
+}
+
+// Loose Equality
+console.log(false == 0);
