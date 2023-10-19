@@ -604,3 +604,58 @@ console.log(false == 0);
 //Logical Operator
 
 console.log(10 > 20 && 30 > 15);
+console.log(10 > 20 || 30 > 15);
+
+// && -> with return first falsy value or the last value
+
+let j;
+j = 10 && 20;
+j = 10 && 30 && 40;
+j = 20 && "" && 2;
+console.log(j);
+
+const uses = [];
+
+uses.length > 0 && console.log(uses[0]);
+
+// || -> will return first truthy value or the last value
+
+let l;
+l = 10 || 20;
+l = 0 || 50;
+l = 0 || null || "" || NaN;
+l = 10 || null || "" || NaN;
+console.log(l);
+
+// ? -> returns the right side operand when the left is null or undefined
+
+let k;
+
+k = 10 ?? 20;
+k = null ?? 20;
+k = undefined ?? 30;
+k = "" ?? 60;
+console.log(k);
+
+//For Loop
+//FIzzBuzz Challenge
+
+for (let i = 1; i <= 100; i++) {
+  if (i % 15 == 0) {
+    console.log("FizzBuzz ");
+  } else if (i % 5 == 0) {
+    console.log("Buzz ");
+  } else if (i % 3 == 0) {
+    console.log("Fizz ");
+  } else {
+    console.log(i);
+  }
+}
+
+// For-of Loop
+
+const forof = ["Book", "Table", "Chair", "Kite"];
+
+for (const item of forof) {
+  console.log(item);
+}
