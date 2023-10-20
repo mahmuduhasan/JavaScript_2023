@@ -671,3 +671,127 @@ const forin = {
 for (const data in forin) {
   console.log(forin[data]);
 }
+
+// Array - forEach()
+
+const socials = ["Twitter", "facebook", "instagram", "whatsapp"];
+
+console.log(socials.__proto__);
+
+// socials.forEach((item, index, arr) => {
+//   console.log(`${index} - ${item}`, arr);
+// });
+
+function social(item, index, arr) {
+  console.log(`${index} - ${item}`, arr);
+}
+
+socials.forEach(social);
+
+const socialObj = [
+  {
+    name: "Twitter",
+    url: "https://www.twitter.com",
+  },
+  {
+    name: "Facebook",
+    url: "https://www.facebook.com",
+  },
+  {
+    name: "Instagram",
+    url: "https://www.instagram.com",
+  },
+  {
+    name: "Linkedin",
+    url: "https://www.linkedin.com",
+  },
+];
+
+socialObj.forEach((item) => {
+  console.log(item.name);
+});
+
+const numbersArrFor = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+const res = [];
+numbersArrFor.forEach((num) => {
+  if (num % 2 === 0) {
+    res.push(num);
+  }
+});
+
+console.log(res);
+
+//Array -> filter()
+
+const numbersArr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+const evenNum = numbersArr.filter((num) => {
+  return num % 2 === 0;
+});
+
+console.log(evenNum);
+
+const companies = [
+  {
+    name: "Company 1",
+    category: "Finance",
+    "start date": 1981,
+    "end date": 2004,
+  },
+  {
+    name: "Company 2",
+    category: "Retail",
+    "start date": 1992,
+    "end date": 2008,
+  },
+  {
+    name: "Company 3",
+    category: "Auto",
+    "start date": 1999,
+    "end date": 2007,
+  },
+  {
+    name: "Company 4",
+    category: "Retail",
+    "start date": 1989,
+    "end date": 2010,
+  },
+  {
+    name: "Company 5",
+    category: "Technology",
+    "start date": 2009,
+    "end date": 2014,
+  },
+  {
+    name: "Company 6",
+    category: "Finance",
+    "start date": 1987,
+    "end date": 2010,
+  },
+  {
+    name: "Company 7",
+    category: "Auto",
+    "start date": 1986,
+    "end date": 1996,
+  },
+  {
+    name: "Company 8",
+    category: "Technology",
+    "start date": 2011,
+    "end date": 2016,
+  },
+  {
+    name: "Company 9",
+    category: "Retail",
+    "start date": 1981,
+    "end date": 1989,
+  },
+];
+
+const retailCompany = companies.filter((company) => {
+  // return company["category"] === "Retail";
+  // return company["start date"] >= 1980 && company["end date"] <= 2005;
+  return company["end date"] - company["start date"] >= 10;
+});
+
+console.log(retailCompany);
