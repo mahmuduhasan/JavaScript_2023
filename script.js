@@ -795,3 +795,95 @@ const retailCompany = companies.filter((company) => {
 });
 
 console.log(retailCompany);
+
+// Array - map()
+
+const array1 = [1, 2, 3, 4, 5];
+const doubled = array1.map((num) => num * 2);
+console.log(doubled);
+
+const companyName = companies.map((company) => company.name);
+
+console.log(companyName);
+
+const companyCat = companies
+  .map((company) => ({
+    name: company.name,
+    category: company.category,
+    lengthOfStanding: `${company["end date"] - company["start date"]} Years`,
+  }))
+  .filter((com) => com.category === "Retail");
+
+console.log(companyCat);
+
+//Chain Map Methods
+
+const doubleSquare = array1.map((number) => number * 2).map((num) => num * num);
+
+console.log(doubleSquare);
+
+// Array - reduce()
+
+const addable = array1.reduce((acc, curr) => {
+  return acc + curr;
+}, 0);
+
+console.log(addable);
+
+const products = [
+  {
+    name: "hero Product",
+    detail: "Lorem ipsum dolor sit amet",
+    price: "9",
+    hero: "OMG This just came out today!",
+    image: "http://placehold.it/940x300/999/CCC",
+  },
+  {
+    name: "Product 1",
+    detail: "Lorem ipsum dolor sit amet",
+    price: "99",
+    info: "This is the latest and greatest product from Derp corp.",
+    image: "http://placehold.it/300x300/999/CCC",
+  },
+  {
+    name: "Product 2",
+    detail: "Lorem ipsum dolor sit amet",
+    price: "29",
+    offer: "BOGOF",
+    image: "http://placehold.it/300x300/999/CCC",
+  },
+  {
+    name: "Product 3",
+    detail: "Lorem ipsum dolor sit amet",
+    price: "199",
+    image: "http://placehold.it/300x300/999/CCC",
+  },
+  {
+    name: "Product 4",
+    detail: "Lorem ipsum dolor sit amet",
+    price: "999",
+    offer: "No srsly GTFO",
+    image: "http://placehold.it/300x300/999/CCC",
+  },
+  {
+    name: "Product 5",
+    detail: "Lorem ipsum dolor sit amet",
+    price: "499",
+    image: "http://placehold.it/300x300/999/CCC",
+  },
+  {
+    name: "Product 6",
+    detail: "Lorem ipsum dolor sit amet",
+    price: "1999",
+    info: "This is the latest and greatest product from Derp corp.",
+    offer: "info with offer",
+    image: "http://placehold.it/300x300/999/CCC",
+  },
+];
+
+const addPrice = products
+  .filter((product) => +product.price > 400)
+  .map((pro) => +pro.price)
+  .reduce((acc, curr) => acc + curr);
+
+console.log(addPrice);
